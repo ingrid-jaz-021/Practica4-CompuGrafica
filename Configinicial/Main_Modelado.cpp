@@ -1,3 +1,8 @@
+// Previo #4
+// Serrano Cuevas Ingrid Jazmín
+// Fecha de entrega: 7 de septiembre de 2026 
+// 319213197
+
 #include<iostream>
 
 //#define GLEW_STATIC
@@ -17,7 +22,7 @@
 
 void Inputs(GLFWwindow *window);
 
-
+// Manipula la vista
 const GLint WIDTH = 800, HEIGHT = 600;
 float movX=0.0f;
 float movY=0.0f;
@@ -34,7 +39,7 @@ int main() {
 
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
-	GLFWwindow *window = glfwCreateWindow(WIDTH, HEIGHT, "Modelado geometrico", nullptr, nullptr);
+	GLFWwindow *window = glfwCreateWindow(WIDTH, HEIGHT, "Previo 4 - Ingrid Serrano", nullptr, nullptr);
 
 	int screenWidth, screenHeight;
 
@@ -51,6 +56,8 @@ int main() {
 
 	glfwMakeContextCurrent(window);
 	glewExperimental = GL_TRUE;
+
+	glfwSwapInterval(1); // Agregamos esta línea para que los movimientos del cubo sea dentro de la ventana
 
 	//Verificación de errores de inicialización de glew
 
@@ -79,7 +86,7 @@ int main() {
 	// Set up vertex data (and buffer(s)) and attribute pointers
 
 	
-
+	// Conjunto de vertices que crea la figura geométrica
 	// use with Perspective Projection
 	float vertices[] = {
 		-0.5f, -0.5f, 0.5f, 1.0f, 0.0f,0.0f,//Front
@@ -216,6 +223,7 @@ int main() {
 	return EXIT_SUCCESS;
  }
 
+ // Interacción con el teclado
  void Inputs(GLFWwindow *window) {
 	 if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)  //GLFW_RELEASE
 		 glfwSetWindowShouldClose(window, true);

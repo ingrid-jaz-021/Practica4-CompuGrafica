@@ -225,9 +225,6 @@ int main() {
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
 
-
-
-
 		//// Pata 1
 		//model = glm::mat4(1.0f);
 		//model = glm::scale(model, glm::vec3(0.1f, 0.6f, 0.1f)); // Tamaño de la pata 

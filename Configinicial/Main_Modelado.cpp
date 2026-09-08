@@ -1,6 +1,6 @@
-// Previo #4
+// Práctica #4
 // Serrano Cuevas Ingrid Jazmín
-// Fecha de entrega: 7 de septiembre de 2026 
+// Fecha de entrega: 12 de septiembre de 2026 
 // 319213197
 
 #include<iostream>
@@ -39,7 +39,7 @@ int main() {
 
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
-	GLFWwindow *window = glfwCreateWindow(WIDTH, HEIGHT, "Previo 4 - Ingrid Serrano", nullptr, nullptr);
+	GLFWwindow *window = glfwCreateWindow(WIDTH, HEIGHT, "Practica 4 - Ingrid Serrano", nullptr, nullptr);
 
 	int screenWidth, screenHeight;
 
@@ -204,25 +204,43 @@ int main() {
 
 		glBindVertexArray(VAO);
 
+		//Modelo de un conejo color miel
+		//Cuerpo del conejo
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, -0.5f, 0.0f)); // Posicion inicial
+		//model = glm::rotate(model, 0.5f, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 0.7f, 1.2f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		// Cabeza del conejo
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.2f, 0.7f)); // Posicion inicial
+		//model = glm::rotate(model, 0.5f, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.7f, 0.7f, 0.25f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+
 		// Dibujo de una TV
 		//Base de la TV
-		model = glm::mat4(1.0f);
-		model = glm::scale(model, glm::vec3(1.0f, 0.05f, 0.6f)); // Ancho, grosor, profundidad
-		model = glm::translate(model, glm::vec3(0.0f, -16.5f, 0.0f)); // Posicion inicial
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glDrawArrays(GL_TRIANGLES, 0, 36);
-		// Cuello
-		model = glm::mat4(1.0f);
-		model = glm::scale(model, glm::vec3(0.2f, 0.3f, 0.1f)); // Ancho, grosor, profundidad
-		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 0.0f)); // Posicion inicial
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glDrawArrays(GL_TRIANGLES, 0, 36);
-		//Pantalla
-		model = glm::mat4(1.0f);
-		model = glm::scale(model, glm::vec3(2.5f, 1.5f, 0.1f)); // Ancho, grosor, profundidad
-		model = glm::translate(model, glm::vec3(0.0f, 0.21f, 0.0f)); // Posicion inicial
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glDrawArrays(GL_TRIANGLES, 0, 36);
+		//model = glm::mat4(1.0f);
+		//model = glm::scale(model, glm::vec3(1.0f, 0.05f, 0.6f)); // Ancho, grosor, profundidad
+		//model = glm::translate(model, glm::vec3(0.0f, -16.5f, 0.0f)); // Posicion inicial
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glDrawArrays(GL_TRIANGLES, 0, 36);
+		//// Cuello
+		//model = glm::mat4(1.0f);
+		//model = glm::scale(model, glm::vec3(0.2f, 0.3f, 0.1f)); // Ancho, grosor, profundidad
+		//model = glm::translate(model, glm::vec3(0.0f, -2.0f, 0.0f)); // Posicion inicial
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glDrawArrays(GL_TRIANGLES, 0, 36);
+		////Pantalla
+		//model = glm::mat4(1.0f);
+		//model = glm::scale(model, glm::vec3(2.5f, 1.5f, 0.1f)); // Ancho, grosor, profundidad
+		//model = glm::translate(model, glm::vec3(0.0f, 0.21f, 0.0f)); // Posicion inicial
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glDrawArrays(GL_TRIANGLES, 0, 36);
 
 
 		//// Pata 1

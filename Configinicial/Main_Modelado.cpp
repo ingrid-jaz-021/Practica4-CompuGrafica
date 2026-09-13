@@ -216,17 +216,16 @@ int main() {
 		// Cabeza
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, 0.03f, 0.68f));
-		model = glm::scale(model, glm::vec3(0.78f, 0.78f, 0.35f));
+		model = glm::scale(model, glm::vec3(0.8f, 0.78f, 0.35f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 		
 		// Mejillas
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.15f, 0.9f)); // Posicion inicial
-		////model = glm::rotate(model, 0.5f, glm::vec3(0.0f, 1.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.85f, 0.4f, 0.3f));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//glDrawArrays(GL_TRIANGLES, 0, 36);
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, -0.16f, 0.95f));
+		model = glm::scale(model, glm::vec3(0.8f, 0.4f, 0.25f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
 
 
 		// Dibujo de una TV

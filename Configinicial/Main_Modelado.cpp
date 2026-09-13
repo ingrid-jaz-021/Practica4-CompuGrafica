@@ -195,11 +195,14 @@ int main() {
 		GLint modelLoc = glGetUniformLocation(ourShader.Program, "model");
 		GLint viewLoc = glGetUniformLocation(ourShader.Program, "view");
 		GLint projecLoc = glGetUniformLocation(ourShader.Program, "projection");
+		// Cambiar de color cada bloque
+		GLint colorLoc = glGetUniformLocation(ourShader.Program, "objectColor");
 
 
 		glUniformMatrix4fv(projecLoc, 1, GL_FALSE, glm::value_ptr(projection));
 		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+
 
 
 		glBindVertexArray(VAO);
@@ -210,6 +213,7 @@ int main() {
 		model = glm::translate(model, glm::vec3(0.0f, -0.5f, 0.0f)); // Posicion inicial
 		//model = glm::rotate(model, 0.5f, glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(1.05f, 0.7f, 1.2f));
+		glUniform3f(colorLoc, 212.0 / 255.0f, 163.0 / 255.0f, 115.0 / 255.0f); // Color miel
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
@@ -217,13 +221,15 @@ int main() {
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, 0.03f, 0.68f));
 		model = glm::scale(model, glm::vec3(0.8f, 0.78f, 0.35f));
+		glUniform3f(colorLoc, 212.0 / 255.0f, 163.0 / 255.0f, 115.0 / 255.0f); // Color miel
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 		
 		// Mejillas
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, -0.16f, 0.95f));
+		model = glm::translate(model, glm::vec3(0.0f, -0.16f, 0.975f));
 		model = glm::scale(model, glm::vec3(0.8f, 0.4f, 0.25f));
+		glUniform3f(colorLoc, 250.0 / 255.0f, 237.0 / 255.0f, 205.0 / 255.0f); // Color beige
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
@@ -231,6 +237,7 @@ int main() {
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.27f, 0.9f, 0.65f));
 		model = glm::scale(model, glm::vec3(0.25f, 1.0f, 0.16f));
+		glUniform3f(colorLoc, 212.0 / 255.0f, 163.0 / 255.0f, 115.0 / 255.0f); // Color miel
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
@@ -238,6 +245,7 @@ int main() {
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-0.27f, 0.9f, 0.65f));
 		model = glm::scale(model, glm::vec3(0.25f, 1.0f, 0.16f));
+		glUniform3f(colorLoc, 212.0 / 255.0f, 163.0 / 255.0f, 115.0 / 255.0f); // Color miel
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
@@ -245,6 +253,7 @@ int main() {
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, -0.1f, -0.7f));
 		model = glm::scale(model, glm::vec3(0.4f, 0.4f, 0.4f));
+		glUniform3f(colorLoc, 250.0 / 255.0f, 237.0 / 255.0f, 205.0 / 255.0f); // Color beige
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
@@ -252,6 +261,7 @@ int main() {
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.32f, -0.92f, 0.5f));
 		model = glm::scale(model, glm::vec3(0.4f, 0.14f, 0.5f));
+		glUniform3f(colorLoc, 212.0 / 255.0f, 163.0 / 255.0f, 115.0 / 255.0f); // Color miel
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
@@ -259,6 +269,7 @@ int main() {
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-0.32f, -0.92f, 0.5f));
 		model = glm::scale(model, glm::vec3(0.4f, 0.14f, 0.5f));
+		glUniform3f(colorLoc, 212.0 / 255.0f, 163.0 / 255.0f, 115.0 / 255.0f); // Color miel
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
@@ -266,6 +277,7 @@ int main() {
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, -0.65f, -0.3f));
 		model = glm::scale(model, glm::vec3(1.35f, 0.4f, 0.35f));
+		glUniform3f(colorLoc, 212.0 / 255.0f, 163.0 / 255.0f, 115.0 / 255.0f); // Color miel
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
@@ -273,6 +285,7 @@ int main() {
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.425f, -0.92f, -0.225f));
 		model = glm::scale(model, glm::vec3(0.5f, 0.14f, 0.5f));
+		glUniform3f(colorLoc, 212.0 / 255.0f, 163.0 / 255.0f, 115.0 / 255.0f); // Color miel
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
@@ -280,6 +293,7 @@ int main() {
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-0.425f, -0.92f, -0.225f));
 		model = glm::scale(model, glm::vec3(0.5f, 0.14f, 0.5f));
+		glUniform3f(colorLoc, 212.0 / 255.0f, 163.0 / 255.0f, 115.0 / 255.0f); // Color miel
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 

@@ -261,7 +261,7 @@ int main() {
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.32f, -0.92f, 0.5f));
 		model = glm::scale(model, glm::vec3(0.4f, 0.14f, 0.5f));
-		glUniform3f(colorLoc, 212.0 / 255.0f, 163.0 / 255.0f, 115.0 / 255.0f); // Color miel
+		glUniform3f(colorLoc, 250.0 / 255.0f, 237.0 / 255.0f, 205.0 / 255.0f); // Color beige
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
@@ -269,7 +269,7 @@ int main() {
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-0.32f, -0.92f, 0.5f));
 		model = glm::scale(model, glm::vec3(0.4f, 0.14f, 0.5f));
-		glUniform3f(colorLoc, 212.0 / 255.0f, 163.0 / 255.0f, 115.0 / 255.0f); // Color miel
+		glUniform3f(colorLoc, 250.0 / 255.0f, 237.0 / 255.0f, 205.0 / 255.0f); // Color beige
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
@@ -285,7 +285,7 @@ int main() {
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.425f, -0.92f, -0.225f));
 		model = glm::scale(model, glm::vec3(0.5f, 0.14f, 0.5f));
-		glUniform3f(colorLoc, 212.0 / 255.0f, 163.0 / 255.0f, 115.0 / 255.0f); // Color miel
+		glUniform3f(colorLoc, 250.0 / 255.0f, 237.0 / 255.0f, 205.0 / 255.0f); // Color beige
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
@@ -293,7 +293,53 @@ int main() {
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-0.425f, -0.92f, -0.225f));
 		model = glm::scale(model, glm::vec3(0.5f, 0.14f, 0.5f));
-		glUniform3f(colorLoc, 212.0 / 255.0f, 163.0 / 255.0f, 115.0 / 255.0f); // Color miel
+		glUniform3f(colorLoc, 250.0 / 255.0f, 237.0 / 255.0f, 205.0 / 255.0f); // Color beige
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		// Ojos
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.2f, 0.1f, 0.85f));
+		model = glm::scale(model, glm::vec3(0.1f, 0.12f, 0.1f));
+		glUniform3f(colorLoc, 0.0f, 0.0f, 0.0f); // Color negro
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-0.2f, 0.1f, 0.85f));
+		model = glm::scale(model, glm::vec3(0.1f, 0.12f, 0.1f));
+		glUniform3f(colorLoc, 0.0f, 0.0f, 0.0f); // Color negro
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		// Nariz
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, -0.03f, 1.1f));
+		model = glm::scale(model, glm::vec3(0.25f, 0.1f, 0.1f));
+		glUniform3f(colorLoc, 1.0f, 175.0 / 255.0f, 205.0 / 255.0f); // Color rosa
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		// Orejas (Color)
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.27f, 0.85f, 0.75f));
+		model = glm::scale(model, glm::vec3(0.1f, 0.9f, 0.05f));
+		glUniform3f(colorLoc, 1.0f, 175.0 / 255.0f, 205.0 / 255.0f); // Color rosa
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-0.27f, 0.85f, 0.75f));
+		model = glm::scale(model, glm::vec3(0.1f, 0.9f, 0.05f));
+		glUniform3f(colorLoc, 1.0f, 175.0 / 255.0f, 205.0 / 255.0f); // Color rosa
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		// Pecho
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, -0.85f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.06f, 0.05f, 1.25f));
+		glUniform3f(colorLoc, 250.0 / 255.0f, 237.0 / 255.0f, 205.0 / 255.0f); // Color beige
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 

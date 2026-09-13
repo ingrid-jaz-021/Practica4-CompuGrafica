@@ -205,21 +205,28 @@ int main() {
 		glBindVertexArray(VAO);
 
 		//Modelo de un conejo color miel
-		//Cuerpo del conejo
+		//Cuerpo
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, -0.5f, 0.0f)); // Posicion inicial
 		//model = glm::rotate(model, 0.5f, glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(1.0f, 0.7f, 1.2f));
+		model = glm::scale(model, glm::vec3(1.05f, 0.7f, 1.2f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
-		// Cabeza del conejo
+		// Cabeza
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.2f, 0.7f)); // Posicion inicial
-		//model = glm::rotate(model, 0.5f, glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.7f, 0.7f, 0.25f));
+		model = glm::translate(model, glm::vec3(0.0f, 0.03f, 0.68f));
+		model = glm::scale(model, glm::vec3(0.78f, 0.78f, 0.35f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
+		
+		// Mejillas
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.15f, 0.9f)); // Posicion inicial
+		////model = glm::rotate(model, 0.5f, glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.85f, 0.4f, 0.3f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glDrawArrays(GL_TRIANGLES, 0, 36);
 
 
 		// Dibujo de una TV

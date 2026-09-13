@@ -251,24 +251,37 @@ int main() {
 		// Pata izquierda delantera
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.32f, -0.92f, 0.5f));
-		model = glm::scale(model, glm::vec3(0.4f, 0.14f, 0.6f));
+		model = glm::scale(model, glm::vec3(0.4f, 0.14f, 0.5f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		// Pata derecha delantera
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-0.32f, -0.92f, 0.5f));
-		model = glm::scale(model, glm::vec3(0.4f, 0.14f, 0.6f));
+		model = glm::scale(model, glm::vec3(0.4f, 0.14f, 0.5f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		// Muslos traseros
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, -0.65f, -0.4f));
-		model = glm::scale(model, glm::vec3(1.35f, 0.4f, 0.4f));
+		model = glm::translate(model, glm::vec3(0.0f, -0.65f, -0.3f));
+		model = glm::scale(model, glm::vec3(1.35f, 0.4f, 0.35f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
+		// Pata izquierda trasera
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.425f, -0.92f, -0.225f));
+		model = glm::scale(model, glm::vec3(0.5f, 0.14f, 0.5f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		// Pata derecha trasera
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-0.425f, -0.92f, -0.225f));
+		model = glm::scale(model, glm::vec3(0.5f, 0.14f, 0.5f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		// Dibujo de una TV
 		//Base de la TV
